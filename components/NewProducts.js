@@ -19,7 +19,11 @@ export default function NewProducts({ newProducts }) {
       <ProductsGrid>
         {newProducts?.length > 0 &&
           newProducts.map((product) => {
-            return <ProductBox {...product}>{product.title}</ProductBox>;
+            return (
+              <ProductBox key={product} {...product}>
+                {product.title}
+              </ProductBox>
+            );
           })}
       </ProductsGrid>
     </Center>
